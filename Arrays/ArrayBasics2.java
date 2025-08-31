@@ -1,5 +1,6 @@
 //Array as Function Arguments.
 
+package Arrays;
 import java.util.*;
 public class ArrayBasics2 {
     public static void update(int num[], int unchange){
@@ -23,4 +24,5 @@ public class ArrayBasics2 {
         //the value(unchange variable) will never change as the value of main function will not change.
     }
 }
+
 
