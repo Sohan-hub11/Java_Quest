@@ -5,6 +5,7 @@ package Arrays;
 import java.util.Scanner;
 
 public class Question2 {
+
 //    public static int sorted(int num[]){
 //        for(int i=1; i< num.length; i++){
 //            if(num[i] < num[i-1]){
@@ -13,7 +14,9 @@ public class Question2 {
 //        }
 //        return 1;
 //    }
-    //More Optimized
+
+//*************More Optimized**************
+    
     public static boolean issorted(int num[]){
         boolean check = true;
         for(int i = 1; i< num.length; i++){
@@ -33,6 +36,7 @@ public class Question2 {
 //        }
 //        else
 //            System.out.println("The Array is Sorted");
+        
         System.out.println("Is Sorted...."+issorted(num));
     }
 }
