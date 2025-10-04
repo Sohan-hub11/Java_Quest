@@ -4,11 +4,18 @@ public class Reverse2 {
     static int[] reverseArray(int[] arr){
         int len = arr.length;
         int[] ans = new int[len];
-        int j = 0;
-        for(int i=len-1; i>=0; i--){
-            ans[j++] = arr[i];
-        }
 
+//  Transverse the Original Array into Reverse Direction.
+//        int j = 0;
+//        for(int i=len-1; i>=0; i--){
+//            ans[j++] = arr[i];
+//        }
+
+//  Different Approach.      
+        int i = len-1, j = 0;
+        while(i >= 0){
+            ans[j++] = arr[i--];
+        }
         return ans;
     }
     static void printArray(int[] arr){
