@@ -6,8 +6,7 @@ import java.util.Scanner;
 
 public class Reverse {
     static void swapInArray(int[] arr, int first, int last){
-        int temp =0;
-        temp = arr[first];
+        int temp = arr[first];
         arr[first] = arr[last];
         arr[last] = temp;
     }
@@ -37,3 +36,4 @@ public class Reverse {
 
     }
 }
+
