@@ -9,12 +9,12 @@ public class Addition {
             System.out.println("Different Matrices Dimension. Addition not possible");
             return;
         }
-        else
-            for(int i =0; i< arr1.length; i++){
-                for(int j=0; j<arr1[0].length; j++){
-                    sum[i][j] = arr1[i][j] + arr2[i][j];
-                }
+        
+        for(int i =0; i< arr1.length; i++){
+            for(int j=0; j<arr1[0].length; j++){
+                sum[i][j] = arr1[i][j] + arr2[i][j];
             }
+        }
         System.out.println("Sum matrices.");
         printMatrices(sum);
     }
@@ -63,3 +63,4 @@ public class Addition {
         addition(arr1, r1, c1, arr2, r2, c2);
     }
 }
+
