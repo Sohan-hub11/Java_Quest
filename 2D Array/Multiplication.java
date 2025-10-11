@@ -6,16 +6,23 @@ import java.util.Scanner;
 
 public class Multiplication {
         static void multiplication(int[][] arr1, int r1, int c1, int[][] arr2, int r2, int c2) {
-            int[][] product = new int[r1][c1];
-            if (r1 != r2 || c1 != c2) {
-                System.out.println("Different Matrices Dimension. Multiplication not possible");
+
+            if (c1 != r2) {
+                System.out.println("Multiplication not possible -- Wrong Dimensions");
                 return;
-            } else
-                for (int i = 0; i < arr1.length; i++) {
-                    for (int j = 0; j < arr1[0].length; j++) {
-                        product[i][j] = arr1[i][j] * arr2[i][j];
+            }
+
+            int[][] product = new int[r1][c2];
+            for (int i = 0; i < r1; i++) {
+                for (int j = 0; j < c2; j++) {
+                    for (int k=0; k<c1; k++) {
+                        /*
+                            multiply[i][j] = ith row of arr1 && jth column of arr2.
+                        */
+                        product[i][j] += (arr1[i][k] * arr2[k][j]);
                     }
                 }
+            }
             System.out.println("Product matrices.");
             printMatrices(product);
         }
@@ -62,7 +69,7 @@ public class Multiplication {
             System.out.println("2nd matrices.");
             printMatrices(arr2);
 
-            //Printing Sum Matrices --
+            //Printing Product Matrices --
             multiplication(arr1, r1, c1, arr2, r2, c2);
         }
     }
