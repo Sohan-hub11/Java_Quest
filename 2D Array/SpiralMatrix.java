@@ -7,7 +7,7 @@ public class SpiralMatrix {
         int startRow = 0;
         int endRow = arr.length-1;
         int startCol = 0;
-        int endCol = arr.length-1;
+        int endCol = arr[0].length-1;
 
         while(startRow <= endRow && startCol <= endCol){
             //Top.
