@@ -1,9 +1,9 @@
-//Normal Search Algorithm..
+//Normal Search Algorithm.. (Brute-Force Approach).
 
 package Array_2D;
 import java.util.*;
 public class Search {
-    static void search(int[][] arr, int key){
+    static void search(int[][] arr, int key){ // O(n^2) -- Time Complexity.
         for(int i=0; i< arr.length; i++){
             for(int j=0; j<arr[0].length; j++){
                 if(arr[i][j] == key){
