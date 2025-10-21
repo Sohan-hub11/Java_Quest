@@ -1,9 +1,7 @@
 //leader of an Array.
 
 package ArrayList;
-
 import java.util.ArrayList;
-
 public class Leader {
     public static ArrayList<Integer> findLeaderArray(int[] arr){
         int n = arr.length;
@@ -17,7 +15,24 @@ public class Leader {
                 result.add(arr[i]);
             }
         }
+
+        //Reversing
+        reverse(result);
+
         return result;
+    }
+    static void reverse( ArrayList<Integer> arr){
+        int start = 0;
+        int end = arr.size()-1;
+
+        //swapping.
+        while(start < end){
+            int temp = arr.get(start);
+            arr.set(start,arr.get(end));
+            arr.set(end,temp);
+            start++;
+            end--;
+        }
     }
     public static void main(String[] args){
         int[] arr = {1, 2, 5, 3, 1, 2};
