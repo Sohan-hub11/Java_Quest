@@ -22,9 +22,15 @@ This repository is designed to help learners build and strengthen their Java fun
 
 3. **Run the code** <br>
    Compile and run any Java file you want to test:
-
     ```bash
     javac MyProblem.java
     java MyProblem
     ```
      (assuming you have the Java JDK installed and the current directory is set accordingly.)
+
+---
+
+## 👨‍💻 Author
+
+Made with ❤️ by [Sohan Samanta](https://github.com/Sohan-hub11) <br>
+Keep up the learning, and happy coding!
