@@ -1,3 +1,5 @@
+//Add data at last in Linked List.
+
 package LinkedList;
 
 public class AddLast {
@@ -15,7 +17,7 @@ public class AddLast {
 
     public void addLast(int data) {
         //1. Create a new node
-        AddLast.Node newNode = new AddLast.Node(data);
+        Node newNode = new Node(data);
 
         if(head == null){
             head = tail = newNode;
