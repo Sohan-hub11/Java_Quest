@@ -1,4 +1,4 @@
-//Add First in Linked list.
+//Add data at First in Linked list.
 
 package LinkedList;
 
