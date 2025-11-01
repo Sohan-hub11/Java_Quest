@@ -1,4 +1,4 @@
-//Remove data from first.
+//Remove data from first in Doubly LL.
 
 package LinkedList;
 
@@ -6,9 +6,11 @@ public class DoublyRemoveFirst {
     public static class Node{
         int data;
         Node next;
+        Node prev;
         Node(int data){
             this.data = data;
             this.next = null;
+            this.prev = null;
         }
     }
 
@@ -24,13 +26,14 @@ public class DoublyRemoveFirst {
             return;
         }
         newNode.next = head;
+        head.prev = null;
         head = newNode;
     }
 
     public void print(){
         Node temp = head;
         while (temp != null) {
-            System.out.print(temp.data + " ");
+            System.out.print(temp.data + "<->");
             temp = temp.next;
         }
         System.out.println("null");
@@ -39,7 +42,7 @@ public class DoublyRemoveFirst {
     public int removeFirst(){
         if(size == 0) {
             System.out.println("Linked List is Empty");
-            return -1;
+            return Integer.MIN_VALUE;
         }
         else if (size == 1) {
             int val = head.data;
@@ -49,20 +52,22 @@ public class DoublyRemoveFirst {
         }
         int val = head.data;
         head = head.next;
+        head.prev = null;
         size--;
         return val;
     }
     public static void main(String[] args){
-        DoublyRemoveFirst ll = new DoublyRemoveFirst();
+        DoublyRemoveFirst dll = new DoublyRemoveFirst();
 
-        ll.addFirst(4);
-        ll.addFirst(3);
-        ll.addFirst(2);
-        ll.addFirst(1);
+        dll.addFirst(5);
+        dll.addFirst(4);
+        dll.addFirst(3);
+        dll.addFirst(2);
+        dll.addFirst(1);
 
-        ll.print();
-        ll.removeFirst();
-        ll.print();
+        dll.print();
+        dll.removeFirst();
+        dll.print();
         System.out.println(size);
     }
 }
