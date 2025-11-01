@@ -1,4 +1,4 @@
-//Remove data from last.
+//Remove data from last in Doubly LL.
 
 package LinkedList;
 
@@ -6,9 +6,11 @@ public class DoublyRemoveLast {
     public static class Node{
         int data;
         Node next;
+        Node prev;
         Node(int data){
             this.data = data;
             this.next = null;
+            this.prev = null;
         }
     }
 
@@ -24,6 +26,7 @@ public class DoublyRemoveLast {
             return;
         }
         newNode.next = head;
+        head.prev = newNode;
         head = newNode;
     }
 
@@ -47,10 +50,7 @@ public class DoublyRemoveLast {
             size = 0;
             return val;
         }
-        Node prev = head;
-        for(int i=0; i<size-2; i++){
-            prev = prev.next;
-        }
+        Node prev = tail.prev;
         int val = tail.data;
         prev.next = null;
         tail = prev.next;
@@ -58,16 +58,17 @@ public class DoublyRemoveLast {
         return val;
     }
     public static void main(String[] args){
-        DoublyRemoveLast ll = new DoublyRemoveLast();
+        DoublyRemoveLast dll = new DoublyRemoveLast();
 
-        ll.addFirst(4);
-        ll.addFirst(3);
-        ll.addFirst(2);
-        ll.addFirst(1);
+        dll.addFirst(5);
+        dll.addFirst(4);
+        dll.addFirst(3);
+        dll.addFirst(2);
+        dll.addFirst(1);
 
-        ll.print();
-        ll.removeLast();
-        ll.print();
+        dll.print();
+        dll.removeLast();
+        dll.print();
         System.out.println(size);
     }
 }
