@@ -1,19 +1,22 @@
-//To find First Occurence of an Array.
+//To find Last Occurence of an Array.
 
 package Recursion;
 
 public class LastOccurence {
-    public static int firstOcc(int[] arr, int i, int key){
-        if(i == arr.length-1){
+    public static int lastOcc(int[] arr, int i, int key){
+        if(i == arr.length){
             return -1;
         }
-        if(arr[i] == key){
+        int foundkey = lastOcc(arr, i+1, key);
+        if(foundkey == -1 && arr[i] == key){
             return i;
         }
-        return firstOcc(arr, i+1, key);
+
+        return foundkey;
     }
     public static void main(String[] args){
         int[] arr = {1, 2, 5, 8, 4, 6, 7, 5};
-        System.out.println(firstOcc(arr, 0, 5));
+//        int[] arr = {5, 5, 5, 5};
+        System.out.println(lastOcc(arr, 0, 5));
     }
 }
