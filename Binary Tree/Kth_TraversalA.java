@@ -16,23 +16,8 @@ public class Kth_TraversalA {
         }
     }
 
-    public static class BinaryTree{
-        static int idx = -1;
-        public static Node buildTree(int[] nodes){
-            idx++;
-            if(nodes[idx] == -1){
-                return null;
-            }
-            //Putting val of left & right subtree.
-            Node newNode = new Node(nodes[idx]);
-            newNode.left = buildTree(nodes);
-            newNode.right = buildTree(nodes);
 
-            return newNode;
-        }
-    }
-
-    public static void levelOrder(Node root){
+    public static void kthFinder(Node root, int level){
         if(root == null){
             return;
         }
@@ -41,31 +26,41 @@ public class Kth_TraversalA {
 
         q.add(root);
         q.add(null);
+        int k = 1;
+
         while (!q.isEmpty()){
             Node currNode =(Node) q.remove();
             if(currNode == null){
-                System.out.println();
+                k++;
                 if(q.isEmpty()){
                     break;
                 }else {
                     q.add(null);
                 }
             } else {
-                System.out.print(currNode.data + " ");
                 if(currNode.left != null){
                     q.add(currNode.left);
                 }
                 if(currNode.right != null){
                     q.add(currNode.right);
                 }
+                if(k == level){ //matches the kth level
+                    System.out.print(currNode.data + " ");
+                }
             }
+
         }
     }
     public static void main(String[] args){
-        int[] nodes = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
-        BinaryTree tree = new BinaryTree();
+        //int[] nodes = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
+        Node root = new Node(1);
+        root.left = new Node(2);
+        root.right = new Node(3);
+        root.left.left = new Node(4);
+        root.left.right = new Node(5);
+        root.right.left = new Node(6);
+        root.right.right = new Node(7);
 
-        Node root = tree.buildTree(nodes);
-        levelOrder(root);
+        kthFinder(root, 3);
     }
 }
