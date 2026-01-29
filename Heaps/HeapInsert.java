@@ -1,0 +1,30 @@
+//Insertion in Heap
+
+package Heaps;
+import java.util.*;
+public class HeapInsert {
+    static class Heap{
+        ArrayList<Integer> list = new ArrayList<>();
+
+        public void add(int data){
+            list.add(data);
+            int childIdx = list.size()-1;
+            int parentIdx = (childIdx - 1)/2;
+
+            while (list.get(childIdx) < list.get(parentIdx)){
+                int temp = list.get(childIdx);
+                list.set(childIdx, list.get(parentIdx));
+                list.set(parentIdx, temp);
+            }
+        }
+    }
+    public static void main(String[] args){
+        Heap h = new Heap();
+
+        h.add(2);
+        h.add(3);
+        h.add(4);
+        h.add(5);
+        h.add(10);
+    }
+}
