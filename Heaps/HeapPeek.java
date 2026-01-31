@@ -8,7 +8,7 @@ public class HeapPeek {
     static class Heap{
         ArrayList<Integer> list = new ArrayList<>();
 
-        public void add(int data){
+        public void add(int data){ //O(log n)
             list.add(data);
             int childIdx = list.size()-1;
             int parentIdx = (childIdx - 1)/2;
@@ -17,9 +17,12 @@ public class HeapPeek {
                 int temp = list.get(childIdx);
                 list.set(childIdx, list.get(parentIdx));
                 list.set(parentIdx, temp);
+
+                childIdx = parentIdx;
+                parentIdx = (childIdx - 1)/2;
             }
         }
-        public int peek(){
+        public int peek(){ //O(1)
             return list.get(0);
         }
     }
