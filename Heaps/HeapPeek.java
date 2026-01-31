@@ -34,5 +34,7 @@ public class HeapPeek {
         h.add(4);
         h.add(5);
         h.add(10);
+
+        System.out.println(h.peek());
     }
 }
