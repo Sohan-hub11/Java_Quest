@@ -1,4 +1,4 @@
-//Insertion in Heap
+//Finding peek in Heap
 
 package Heaps;
 
