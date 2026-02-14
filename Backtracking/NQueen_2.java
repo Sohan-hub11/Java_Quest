@@ -1,5 +1,5 @@
 //N-Queens Problem.
-//Count ways.
+//Count number ways of getting N-Queen.
 
 package Backtracking;
 
@@ -26,10 +26,12 @@ public class NQueen_2 {
         return true;
     }
 
+    static int count = 0;
+
     public static void nQueen(char[][] board, int row){
         //Base  Case
         if(row == board.length){
-            printNQueen(board);
+            count++;
             return;
         }
 
@@ -53,7 +55,7 @@ public class NQueen_2 {
         }
     }
     public static void main(String[] args){
-        int n = 4;
+        int n = 5;
         char[][] board = new char[n][n];
 
         //Board Initializing.
@@ -63,5 +65,6 @@ public class NQueen_2 {
             }
         }
         nQueen(board, 0);
+        System.out.println("Number ways : " + count);
     }
 }
