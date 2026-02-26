@@ -1,3 +1,5 @@
+//Max in ArrayList.
+
 package ArrayList;
 import java.util.*;
 public class Maximum {
