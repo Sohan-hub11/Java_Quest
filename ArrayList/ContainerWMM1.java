@@ -1,19 +1,29 @@
 //Container with Most Water Problem(Optimized Way).
+//2-pointer Approach
 
 package ArrayList;
 
 import java.util.ArrayList;
 
 public class ContainerWMM1 {
-    public static int findMostWater(ArrayList<Integer> height){
+    public static int storeWater(ArrayList<Integer> height){
         int maxWater = 0;
+        int lp = 0;
+        int rp = height.size() - 1;
 
-        for(int i=0; i< height.size(); i++){
-            for(int j=i+1; j< height.size(); j++){
-                int ht = Math.min(height.get(i), height.get(j));
-                int wt = j-1;
-                int currWater = ht * wt;
-                maxWater = Math.max(maxWater, currWater);
+        while (lp < rp){
+            //height
+            int ht = Math.min(height.get(lp), height.get(rp));
+            //width
+            int wt = rp - lp;
+            int water = ht * wt;
+            maxWater = Math.max(maxWater, water);
+            
+            //update ptr
+            if(height.get(lp) < height.get(rp)){
+                lp++;
+            } else {
+                rp--;
             }
         }
 
@@ -31,6 +41,6 @@ public class ContainerWMM1 {
         height.add(3);
         height.add(7);
 
-        System.out.println(findMostWater(height));
+        System.out.println(storeWater(height));
     }
 }
