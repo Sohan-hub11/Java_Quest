@@ -152,5 +152,7 @@ public class HashMapCode {
 
         System.out.println(map.get("Biriyani"));
         System.out.println(map.containsKey("Tea"));
+        map.remove("Coffee");
+        System.out.println(map.get("Coffee"));
     }
 }
