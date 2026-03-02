@@ -21,8 +21,8 @@ public class HashMapOperator {
         System.out.println(map.containsKey("Biriyani"));
 
         //Removes
-//        map.remove("Coffee");
-//        System.out.println(map);
+        map.remove("Coffee");
+        System.out.println(map);
 
         //Check Size
         System.out.println(map.size());
@@ -32,3 +32,4 @@ public class HashMapOperator {
         
     }
 }
+
