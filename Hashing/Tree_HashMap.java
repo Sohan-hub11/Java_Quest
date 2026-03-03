@@ -23,6 +23,6 @@ public class Tree_HashMap {
         map.put("Biriyani", 250);
 
         System.out.println("HashMap -> " + map);
-        System.out.println("Linked HashMap -> " + thm);
+        System.out.println("Tree HashMap -> " + thm);
     }
 }
