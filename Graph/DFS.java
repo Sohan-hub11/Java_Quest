@@ -1,5 +1,5 @@
 //Graph Traversal.
-//Breadth First Search(BFS).
+//Depth First Search(BFS).
 
 package Graph;
 
@@ -17,7 +17,7 @@ public class DFS {
         }
     }
 
-    public static void createGraph(ArrayList<Edge>[] graph){
+    public static void createGraph(ArrayList<Edge>[] graph){ //O(V+E)
         for(int i=0; i< graph.length; i++){
             graph[i] = new ArrayList<>();
         }
@@ -46,24 +46,18 @@ public class DFS {
         graph[6].add(new Edge(6, 5, 1));
     }
 
-    public static void bfs(ArrayList<Edge>[] graph){
-        //Queue for storing nodes
-        Queue<Integer> q = new LinkedList<>();
+    public static void dfs(ArrayList<Edge>[] graph, int curr, boolean[] visit){
 
-        //visited array -> to track each node is visited once
-        boolean[] visit = new boolean[graph.length];
+        //visit curr
+        System.out.print(curr + " ");
+        visit[curr] = true;
 
-        q.add(0); //src = 0th index.
-        while(!q.isEmpty()){
-            int curr = q.remove();
-            if(!visit[curr]){
-                System.out.print(curr + " ");
-                visit[curr] = true;
-                for(int i=0; i<graph[curr].size(); i++){
-                    Edge e = graph[curr].get(i);
-                    q.add(e.dest);
-                }
+        for(int i=0; i<graph[curr].size(); i++){
+            Edge e = graph[curr].get(i);
+            if(!visit[e.dest]){
+                dfs(graph, e.dest, visit);
             }
+
         }
     }
     public static void main(String[] args){
@@ -73,6 +67,7 @@ public class DFS {
 
         createGraph(graph);
 
-        bfs(graph);
+        int src = graph[0].get(0).src;
+        dfs(graph, src, new boolean[V]);
     }
 }
