@@ -47,7 +47,7 @@ public class HasPath2 {
     }
 
     //public static int count;
-    public static int countPath(ArrayList<Edge>[] graph, int curr, boolean[] visit, int dest){ //O(V+E)
+    public static int countPath(ArrayList<Edge>[] graph, int curr, boolean[] visit, int dest){ //O(V + E + counted Path)
 
         //visit curr
         if(curr == dest){
