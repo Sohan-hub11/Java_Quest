@@ -54,15 +54,15 @@ public class ConnectComponent_BFS {
 
         for(int i=0; i< graph.length; i++){
             if(!visit[i]) {
-                utilBfs(graph, visit);
+                utilBfs(graph, i, visit);
             }
         }
     }
-    public static void utilBfs(ArrayList<Edge>[] graph, boolean[] visit){ //O(V+E)
+    public static void utilBfs(ArrayList<Edge>[] graph, int src, boolean[] visit){ //O(V+E)
         //Queue for storing nodes
         Queue<Integer> q = new LinkedList<>();
 
-        q.add(0); //src = 0th index.
+        q.add(src); //source index
         while(!q.isEmpty()){
             int curr = q.remove();
             if(!visit[curr]){
