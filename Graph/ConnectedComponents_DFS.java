@@ -53,7 +53,9 @@ public class ConnectedComponents_DFS {
         boolean[] visit = new boolean[graph.length];
 
         for(int i=0; i< graph.length; i++){
+            if(!visit[i]) {
                 utildfs(graph, i, visit);
+            }
         }
     }
     public static void utildfs(ArrayList<Edge>[] graph, int curr, boolean[] visit){
