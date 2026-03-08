@@ -4,7 +4,7 @@ package Hashing;
 import java.util.*;
 public class Intersection {
     public static void main(String[] args){
-        int[] arr1 = {7, 3, 9};
+        int[] arr1 = {7, 3, 9, 3};
         int[] arr2 = {6, 3, 9, 2, 9, 4};
 
         HashSet<Integer> set = new HashSet<>();
@@ -17,6 +17,7 @@ public class Intersection {
         for(int i=0; i< arr1.length; i++){
             if(set.contains(arr1[i])){
                 count++;
+                set.remove(arr2[i]);
             }
         }
 
