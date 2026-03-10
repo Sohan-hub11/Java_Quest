@@ -17,7 +17,7 @@ public class MaxSlidingWindow {
         }
     }
     public static void main(String[] args){
-        int[] num = {1, 3, -1, -3, 5, 3, 6, 7};
+        int[] num = {11, 3, -1, -3, 5, 3, 6, 7};
         int k = 3;
         int [] ans = new int[num.length - k+1];
 
@@ -35,7 +35,7 @@ public class MaxSlidingWindow {
             ans[i-k+1] = pq.peek().number;
         }
 
-        for(int i=0; i<k; i++){
+        for(int i=0; i< ans.length; i++){
             System.out.print(ans[i] + " ");
         }
     }
