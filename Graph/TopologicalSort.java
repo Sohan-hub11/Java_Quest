@@ -20,54 +20,56 @@ public class TopologicalSort {
             graph[i] = new ArrayList<>();
         }
 
-        graph[0].add(new Edge(0, 2));
+        graph[0].add(new Edge(0, 0));
 
-        graph[1].add(new Edge(1, 0));
+        graph[1].add(new Edge(1, 1));
 
         graph[2].add(new Edge(2, 3));
 
-        graph[3].add(new Edge(3, 0));
-        //graph[3].add(new Edge(3, 2));
+        graph[3].add(new Edge(3, 1));
+
+        graph[4].add(new Edge(4, 0));
+        graph[4].add(new Edge(4, 1));
+
+        graph[5].add(new Edge(5, 2));
+        graph[5].add(new Edge(5, 0));
 
     }
 
-    public static boolean isCycle(ArrayList<Edge>[] graph){
+    public static void topologicalSort(ArrayList<Edge>[] graph){
         boolean[] vis = new boolean[graph.length];
-        boolean[] stackVis = new boolean[graph.length];
+        Stack s = new Stack<>();
 
         for(int i=0; i< graph.length; i++){
             if(!vis[i]){
-                if(isCycleUtil(graph, i, vis, stackVis)){
-                    return true;
-                }
+                topologicalUtil(graph, i, vis, s);
             }
         }
 
-        return false;
+        while(!s.empty()){
+            System.out.print(s.pop() + " ");
+        }
+
     }
 
-    public static boolean isCycleUtil(ArrayList<Edge>[] graph, int curr, boolean[] vis, boolean[] stackVis){
+    public static void topologicalUtil(ArrayList<Edge>[] graph, int curr, boolean[] vis, Stack s){
         vis[curr] = true;
-        stackVis[curr] = true;
+
         for(int i=0; i<graph[curr].size(); i++){
             Edge e = graph[curr].get(i);
 
-            if(stackVis[e.dest]){
-                return true;
-            }
-            if(!vis[e.dest] && isCycleUtil(graph, e.dest, vis, stackVis)){
-                return true;
+            if(!vis[e.dest]){
+                topologicalUtil(graph, e.dest, vis, s);
             }
         }
-        stackVis[curr] = false;
-
-        return false;
+        s.push(curr);
     }
     public static void main(String[] args){
-        int V = 4;
+        int V = 6;
         ArrayList<Edge>[] graph = new ArrayList[V];
 
         createGraph(graph);
-        System.out.println(isCycle(graph));
+
+        topologicalSort(graph);
     }
 }
