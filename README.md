@@ -19,7 +19,8 @@ A collection of Java programming exercises and solutions, organized by topic. Th
 ## 🛠️ Tech Stack
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=java,intellijIdea,git,github" />
+  <img src="https://skillicons.dev/icons?i=java,git,github" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" width="55"/>
 </p>
 
 ---
