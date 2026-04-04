@@ -107,4 +107,10 @@ A collection of Java programming exercises and solutions, organized by topic. Th
 ## 👨‍💻 Author
 
 Made with ❤️ by [Sohan Samanta](https://github.com/Sohan-hub11) <br>
-Keep up the learning, and happy coding!
+
+## ⭐ Support
+
+If you like this repo:
+
+⭐ Star it  
+📢 Share it
