@@ -31,7 +31,8 @@ A collection of Java programming exercises and solutions, organized by topic. Th
 - Variables & Data Types  
 - Operators  
 - Conditional Statements  
-- Loops  
+- Loops
+- Patterns 
 
 ### 🟡 Core Java
 - Arrays  
@@ -52,7 +53,8 @@ A collection of Java programming exercises and solutions, organized by topic. Th
 - Multithreading  
 
 ### 🟣 DSA
-- Sorting & Searching  
+- Sorting & Searching
+- Bit Manipulation 
 - Recursion  
 - Linked List  
 - Stack & Queue  
